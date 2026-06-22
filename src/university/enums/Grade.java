@@ -1,0 +1,31 @@
+package university.enums;
+
+public enum Grade {
+
+    A(4.0),
+    B(3.0),
+    C(2.0),
+    D(1.0),
+    F(0.0),
+    NA(0.0); // ще не оцінено
+
+    private final double weight;
+
+    Grade(double weight) {
+        this.weight = weight;
+    }
+
+    public double getWeight() {
+        return weight;
+    }
+
+    // Часто додають такі утилітарні методи
+    public boolean isPassing() {
+        return this != F && this != NA;
+    }
+
+    @Override
+    public String toString() {
+        return name();
+    }
+}
